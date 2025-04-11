@@ -29,18 +29,18 @@ const About = () => {
             >
               <SectionTitle
                 title="Our Story"
-                subtitle="Founded two years ago with a vision to redefine self-care, we are more than just a salon — it's a space where you're truly cared for."
+                subtitle="Founded just two years ago, our salon was born from a desire to elevate self-care into a personalized, ethical, and uplifting experience."
               />
 
               <div className="mt-6 space-y-4 text-jet/70">
                 <p>
-                  Welcome to our salon – a retreat where elegance, confidence, and care come together. Our approach goes beyond enhancing your appearance; we focus on crafting confidence through personalized, ethical services tailored to you.
+                  Welcome to Tryst — a retreat where timeless elegance meets heartfelt care. From day one, our mission has been simple: to help you look and feel your best through services crafted with love, intention, and integrity.
                 </p>
                 <p>
-                  Carefully choosing only all-natural, eco-friendly products, we ensure that every treatment nurtures both your beauty and the planet. We believe in beauty with integrity.
+                  We thoughtfully select only clean, all-natural, and eco-conscious products that are as nurturing to you as they are kind to the planet. Here, sustainability is more than a buzzword — it’s a promise.
                 </p>
                 <p>
-                  Step into a beautifully designed space, created to offer a warm, inviting atmosphere that makes you feel completely comfortable and at ease. Here, you are valued, rejuvenated, and treated with the utmost care – because your radiance is our purpose.
+                  Our salon is more than a place for beauty — it's a sanctuary where you're seen, heard, and celebrated. Surrounded by warm tones and cozy interiors, each visit is designed to make you feel empowered, rejuvenated, and right at home.
                 </p>
               </div>
             </motion.div>
@@ -67,7 +67,7 @@ const About = () => {
         <div className="container px-4 mx-auto">
           <SectionTitle
             title="Our Mission & Vision"
-            subtitle="Making you look and feel your absolute best through sustainable beauty practices."
+            subtitle="Crafting confidence and care through sustainable beauty rituals tailored just for you."
             center
           />
 
@@ -86,7 +86,7 @@ const About = () => {
               </div>
               <h3 className="mb-3 text-xl font-lora text-salon-purple">Our Mission</h3>
               <p className="text-jet/70">
-                To provide personalized, ethical services that enhance both your appearance and confidence, while maintaining our commitment to sustainability and environmental responsibility through the use of eco-friendly products.
+                To provide personalized beauty services that go beyond the surface. We’re committed to making you feel confident and radiant using only clean, eco-friendly products and mindful practices that honor both you and the environment.
               </p>
             </motion.div>
 
@@ -105,7 +105,7 @@ const About = () => {
               </div>
               <h3 className="mb-3 text-xl font-lora text-salon-purple">Our Vision</h3>
               <p className="text-jet/70">
-                To create a space where style, sustainability, and self-love come together, offering a warm, inviting atmosphere where every client feels completely comfortable and valued while receiving the highest quality beauty services.
+                To create a haven where style, sustainability, and self-love come together. Our goal is to redefine self-care — not just as a routine, but as a celebration of individuality and wellness.
               </p>
             </motion.div>
           </div>
@@ -135,7 +135,7 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-lora text-salon-purple">Sustainability</h3>
               <p className="text-jet/70">
-              At our salon, sustainability isn't just a choice it's a commitment to both our clients, community and the environment. We thoughtfully select clean, eco-conscious products that are as gentle on you as they are respectful to the planet.              </p>
+              Sustainability isn’t a trend here — it’s a way of life. We consciously choose clean, eco-friendly products and mindful practices that uplift you and leave a gentle footprint on the planet.              </p>
             </motion.div>
 
             <motion.div
@@ -170,8 +170,7 @@ const About = () => {
               </div>
               <h3 className="mb-2 text-xl font-lora text-salon-purple">Comfort</h3>
               <p className="text-jet/70">
-                Our beautifully designed space offers a warm, inviting atmosphere where you can feel completely at ease while being pampered and cared for.
-              </p>
+              Designed like a cozy escape, our salon is your feel-good space — where warm energy, thoughtful care, and effortless style make every visit a joy.              </p>
             </motion.div>
           </div>
         </div>

@@ -1,36 +1,37 @@
 import ServiceTemplate from './ServiceTemplate';
+import backgroundImage from '../../assets/images/grooming.jpeg'
 
 const GroomingPage = () => {
   const groomingServices = [
     {
       name: "Men's Haircut",
-      description: "Professional haircut and styling for men",
-      price: "From $40"
+      description: "Professional haircut and styling tailored to your vibe.",
+      price: "Starts at ₹3,300"
     },
     {
       name: "Beard Trim & Styling",
-      description: "Expert beard grooming and shaping",
-      price: "From $25"
+      description: "Expert beard grooming and shaping for a sharp finish.",
+      price: "Starts at ₹2,100"
     },
     {
       name: "Hot Towel Shave",
-      description: "Traditional hot towel straight razor shave",
-      price: "From $35"
+      description: "Classic hot towel straight razor shave for a clean, smooth feel.",
+      price: "Starts at ₹2,900"
     },
     {
       name: "Hair Color",
-      description: "Professional hair coloring services for men",
-      price: "From $60"
+      description: "Precision hair coloring services for bold or natural looks.",
+      price: "Starts at ₹5,000"
     },
     {
       name: "Facial",
-      description: "Men's facial treatment for skin care",
-      price: "From $50"
+      description: "Targeted skincare treatments designed for men’s skin.",
+      price: "Starts at ₹4,100"
     },
     {
       name: "Complete Grooming Package",
-      description: "Comprehensive grooming service including haircut, beard trim, and facial",
-      price: "From $100"
+      description: "The full works — haircut, beard trim, and rejuvenating facial.",
+      price: "Starts at ₹8,300"
     }
   ];
 
@@ -38,7 +39,7 @@ const GroomingPage = () => {
     <ServiceTemplate
       title="Men's Grooming"
       subtitle="Professional grooming services tailored for the modern gentleman"
-      heroImage="/images/grooming.jpeg"
+      heroImage={backgroundImage}
       services={groomingServices}
     />
   );

@@ -20,7 +20,7 @@ const Home = () => {
     {
       id: 1,
       title: 'Hair',
-      description: 'Cut. Colour. Cure. No matter the service, you will meet a new you, every time.',
+      description: 'Cut, color, or cure — every visit is your chance to reinvent, refresh, and reveal your best self.',
       image: salon1,
       link: '/services/hair',
       reversed: false
@@ -28,7 +28,7 @@ const Home = () => {
     {
       id: 2,
       title: 'Skin',
-      description: 'Clean-up or get an indulging facial, you deserve to be pampered. Over and over again.',
+      description: 'From clean-ups to indulgent facials — let your skin glow with care, every single time.',
       image: salon2,
       link: '/services/skin',
       reversed: true
@@ -36,7 +36,7 @@ const Home = () => {
     {
       id: 3,
       title: 'Grooming',
-      description: 'Become a regular. Make it a grooming ritual. Scrub, shave, trim, put on a good face and look like success. While having a good time.',
+      description: 'From scrubs and trims to sharp beards and fresh faces — grooming here is a ritual of self-respect and style.',
       image: salon3,
       link: '/services/grooming',
       reversed: false
@@ -44,7 +44,7 @@ const Home = () => {
     {
       id: 4,
       title: 'Spa',
-      description: 'Not for special occasions alone. Treat yourself to one, on good days, bad days, and special ones.',
+      description: 'Celebrate every kind of day with spa indulgence — because self-care isn’t just for special occasions.',
       image: salon4,
       link: '/services/spa',
       reversed: true
@@ -125,7 +125,7 @@ const Home = () => {
             <div className="relative z-10 space-y-6">
               <SectionTitle
                 title="Our work"
-                subtitle="Hair technicians to masters in skin care sciences. Every one of us takes the grooming business, very personally. Here's a look."
+                subtitle="From styling specialists to skincare pros, we take your beauty journey personally. Here’s a glimpse of what passion looks like."
                 className="mb-0"
               />
 
@@ -211,7 +211,7 @@ const Home = () => {
             <div className="order-1 md:order-2">
               <SectionTitle
                 title="Here to help"
-                subtitle="Have a question? Or want to make a booking? Reach out to us via email or phone."
+                subtitle="Got questions or ready to book your glow-up? Let’s get you connected."
               />
 
               <div className="mb-8 space-y-4">
