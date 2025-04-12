@@ -1,48 +1,59 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/hair.jpeg'
+import backgroundImage from '../../assets/images/hair.jpeg';
 
 const HairPage = () => {
   const hairServices = [
     {
       name: "Haircut & Style",
       description: "Expert haircut and styling personalized to enhance your unique features",
-      price: "@999 onwards"
+      price: "₹999 onwards",
+      duration: "45-60 mins",
+      bestFor: "All hair types"
     },
     {
       name: "Hair Coloring",
-      description: `Time to color your world — your way! From subtle blends to bold statements, we've got the perfect shade for every mood. Let our top color experts bring your vision to life with ombré, balayage, highlights, or money pieces — all while keeping your hair healthy.`,
-      price: "@2999 onwards",
+      description: "From subtle blends to bold statements, we've got the perfect shade for every mood",
+      price: "₹2,999 onwards",
+      duration: "2-3 hours",
+      bestFor: "Color transformation",
       details: [
-        "Go Bold with Color – Your Hair, Your Rules!",
-        "Pick your vibe with our Sunkissed or À La Carte color options",
-        "No damage, just pure hair happiness with major color energy"
+        "Ombré, balayage, highlights, or money pieces",
+        "Sunkissed or À La Carte color options",
+        "Healthy hair with major color energy"
       ]
     },
     {
       name: "Hair Treatments",
-      description: `From Frizz to Fabulous — Reinvent Your Texture! Wave goodbye to hair worries with our range of expert treatments including Olaplex, keratin, and specialized hair spa.`,
-      price: "@1999 onwards",
+      description: "Specialized treatments to strengthen, restore, and transform your hair",
+      price: "₹1,999 onwards",
+      duration: "60-90 mins",
+      bestFor: "Damaged hair",
       details: [
-        "Scalp rejuvenation and deep conditioning treatments",
-        "Intensive nourishment with Davines and Nashi products",
-        "Premium Hair Botox treatment (formaldehyde-free and safe)",
-        "Advanced smoothing services for long-lasting shine"
+        "Olaplex, keratin, and hair spa treatments",
+        "Scalp rejuvenation and deep conditioning",
+        "Formaldehyde-free Hair Botox"
       ]
     },
     {
       name: "Blowout & Styling",
       description: "Professional blow dry and styling for any occasion with lasting results",
-      price: "@899 onwards"
+      price: "₹899 onwards",
+      duration: "45 mins",
+      bestFor: "Special events"
     },
     {
       name: "Hair Extensions",
-      description: "High-quality hair extensions for added length and volume",
-      price: "@15000 onwards"
+      description: "High-quality extensions for added length and volume",
+      price: "₹15,000 onwards",
+      duration: "2-3 hours",
+      bestFor: "Instant length"
     },
     {
       name: "Bridal Hair",
       description: "Exquisite bridal hair styling for your special day",
-      price: "@8000 onwards"
+      price: "₹8,000 onwards",
+      duration: "2-3 hours",
+      bestFor: "Weddings"
     }
   ];
 
@@ -54,22 +65,42 @@ const HairPage = () => {
       services={hairServices}
       additionalContent={
         <>
-          <section className="hair-coloring-section">
-            <h2>HAIR COLORING</h2>
-            <p>Time to color your world — your way! From subtle blends to bold statements, we've got the perfect shade for every mood. Your hair, your rules, let's get you glowing — book today! Let our top color experts bring your vision to life with shades that suit your style...</p>
-            
-            <h3>Go Bold with Color – Your Hair, Your Rules!</h3>
-            <p>At Tryst, we don't just color hair — we create head-turning magic! Whether you're vibing with ombré, craving bold streaks, or dreaming of balayage, foliage, highlights, or even money piece (yep, we do that too!) — we've got the skills to make it pop.</p>
-            <p>Pick your vibe with our Sunkissed or À La Carte color options — both designed to keep your hair healthy while bringing major color energy. No damage, just pure hair happiness!</p>
+          <section className="py-8 bg-white">
+            <div className="container max-w-4xl px-4 mx-auto">
+              <div className="p-8 rounded-lg bg-almond/10">
+                <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">HAIR COLORING</h2>
+                <div className="space-y-4 text-jet/90">
+                  <p className="text-center">Time to color your world — your way! From subtle blends to bold statements, we've got the perfect shade for every mood. Your hair, your rules, let's get you glowing — book today!</p>
+                </div>
+                
+                <h3 className="mt-8 mb-4 text-2xl font-semibold text-center font-lora text-salon-purple">Go Bold with Color – Your Hair, Your Rules!</h3>
+                <div className="space-y-4 text-jet/90">
+                  <p>At Tryst, we don't just color hair — we create head-turning magic! Whether you're vibing with ombré, craving bold streaks, or dreaming of balayage, highlights, or even money pieces — we've got the skills to make it pop.</p>
+                  <p className="p-4 mt-6 text-lg font-medium text-center rounded bg-salon-purple/10 text-salon-purple">
+                    ✨ Pick your vibe with our healthy coloring options!
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
-          <section className="hair-texture-section">
-            <h2>HAIR TEXTURE</h2>
-            <p>We get it — keeping your hair healthy can be a challenge! From hard water and product buildup to pollution and humidity, your hair faces it all. At our salon, we offer wide range of expert treatments — whether you're looking to strengthen, restore, or transform your hair's texture. Step into our salon and treat your hair to the care it truly deserves.</p>
-            
-            <h3>From Frizz to Fabulous — Reinvent Your Texture</h3>
-            <p>Wave goodbye to hair worries with our range of expert treatments. Whether it's scalp rejuvenation, deep conditioning, or intensive nourishment with Davines and Nashi — we've got your hair's health covered. Need a strength boost? Our Olaplex-infused solutions work wonders from inside out.</p>
-            <p>For smoother texture and long-lasting shine, explore our advanced smoothing services or treat yourself to our premium, professional Hair Botox treatment — formaldehyde-free, absolutely safe, and completely transformative.</p>
+          <section className="py-4 bg-almond/10">
+            <div className="container max-w-4xl px-4 mx-auto">
+              <div className="p-8 rounded-lg bg-white/90">
+                <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">HAIR TEXTURE</h2>
+                <div className="space-y-4 text-jet/90">
+                  <p>We get it — keeping your hair healthy can be a challenge! From hard water to pollution, your hair faces it all. Step into our salon and treat your hair to the care it deserves.</p>
+                </div>
+                
+                <h3 className="mt-8 mb-4 text-2xl font-semibold text-center font-lora text-salon-purple">From Frizz to Fabulous — Reinvent Your Texture</h3>
+                <div className="space-y-4 text-jet/90">
+                  <p>Wave goodbye to hair worries with our expert treatments. Whether it's scalp rejuvenation, deep conditioning, or intensive nourishment — we've got your hair's health covered.</p>
+                  <p className="p-4 mt-6 text-lg font-medium text-center rounded bg-salon-purple/10 text-salon-purple">
+                    ✨ Transform your hair texture today!
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
         </>
       }

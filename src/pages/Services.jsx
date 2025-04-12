@@ -158,7 +158,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white md:py-24">
+      <section className="py-16 bg-white md:py-24 bg-champagne_pink-500/35">
         <div className="container px-4 mx-auto text-center">
           <SectionTitle
             title="Ready to experience the difference?"

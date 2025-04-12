@@ -149,52 +149,52 @@ const About = () => {
         </div>
       </section>
 
-      <section className='py-16 text-white md:py-24 bg-salon-purple'>
-        <div className='container px-4 mx-auto'>
-          <div className='max-w-3xl mx-auto text-center'>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: '-100px' }}
-              className='mb-6 text-3xl md:text-4xl font-lora'
+      <section className='py-16 text-jet md:py-24 bg-champagne_pink/35'>
+      <div className='container px-4 mx-auto'>
+        <div className='max-w-3xl mx-auto text-center'>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-100px' }}
+            className='mb-6 text-3xl md:text-4xl font-lora text-salon-purple'
+          >
+            Experience beauty with integrity
+          </motion.h2>
+    
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: '-100px' }}
+            className='mb-8 text-jet/80'
+          >
+            Ready to experience personalized care in our warm and inviting
+            space?
+          </motion.p>
+    
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <Link
+              to='https://wa.me/1234567890'
+              className='inline-block px-8 py-3 mr-4 text-sm font-medium tracking-wider text-white uppercase transition-all duration-300 bg-salon-purple hover:bg-black hover:text-white'
             >
-              Experience beauty with integrity
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true, margin: '-100px' }}
-              className='mb-8 text-white/80'
+              Book an Appointment
+            </Link>
+            <Link
+              to='/services'
+              className='inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-salon-purple border-salon-purple hover:bg-salon-purple hover:text-white'
             >
-              Ready to experience personalized care in our warm and inviting
-              space?
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true, margin: '-100px' }}
-            >
-              <Link
-                to='https://wa.me/1234567890'
-                className='inline-block px-8 py-3 mr-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 bg-white text-salon-purple hover:bg-black hover:text-white'
-              >
-                Book an Appointment
-              </Link>
-              <Link
-                to='/services'
-                className='inline-block px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all duration-300 border border-white hover:bg-white hover:text-salon-purple'
-              >
-                Explore Services
-              </Link>
-            </motion.div>
-          </div>
+              Explore Services
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   )
 }

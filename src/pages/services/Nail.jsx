@@ -117,7 +117,7 @@ const NailPage = () => {
       services={nailServices}
       additionalContent={
         <>
-          <section className="py-16 bg-white">
+          <section className="py-8 bg-white">
             <div className="container max-w-4xl px-4 mx-auto">
               <div className="p-8 rounded-lg bg-almond/10">
                 <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">Nail Art</h2>
@@ -136,7 +136,7 @@ const NailPage = () => {
             </div>
           </section>
 
-          <section className="py-16 bg-almond/10">
+          <section className="py-8 bg-almond/10">
             <div className="container max-w-4xl px-4 mx-auto">
               <div className="p-8 rounded-lg bg-white/90">
                 <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">Hands & Feet</h2>
