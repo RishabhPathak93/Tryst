@@ -376,9 +376,6 @@ const MainLayout = () => {
                   © {new Date().getFullYear()} Tryst Salon. All rights reserved.
                 </p>
                 <div className='flex items-center mt-1'>
-                  <span className='text-xs text-beige'>
-                    Designed by Tridenzic
-                  </span>
                   <Link
                     to='/admin/login'
                     className='ml-3 text-xs text-light-gray/50 hover:text-light-gray'

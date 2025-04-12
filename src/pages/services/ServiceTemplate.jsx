@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { FiArrowRight, FiClock, FiUserCheck } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionTitle from '../../components/SectionTitle';
 
@@ -6,10 +7,11 @@ const ServiceTemplate = ({
   title,
   subtitle,
   heroImage,
-  services
+  services,
+  additionalContent
 }) => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroSection
         title={title}
         subtitle={subtitle}
@@ -39,25 +41,66 @@ const ServiceTemplate = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, margin: '-100px' }}
-                className="p-6 transition-shadow duration-300 bg-white rounded-sm shadow-md hover:shadow-lg"
+                className="overflow-hidden transition-all duration-300 bg-white border rounded-lg shadow-sm hover:shadow-md border-almond/30"
               >
-                <h3 className="mb-2 text-xl font-lora text-salon-purple">{service.name}</h3>
-                <p className="mb-4 text-jet/70">{service.description}</p>
-                {service.price && (
-                  <p className="text-lg font-medium text-salon-purple">{service.price}</p>
-                )}
+                <div className="p-6">
+                  <h3 className="mb-3 text-xl font-bold font-lora text-salon-purple">{service.name}</h3>
+                  <p className="mb-4 text-jet/80">{service.description}</p>
+                  
+                  {service.price && (
+                    <p className="mb-4 text-lg font-semibold text-salon-purple">{service.price}</p>
+                  )}
+                  
+                  <div className="flex items-center gap-4 mb-4 text-sm text-jet/60">
+                    {service.duration && (
+                      <span className="flex items-center gap-1">
+                        <FiClock size={14} /> {service.duration}
+                      </span>
+                    )}
+                    {service.bestFor && (
+                      <span className="flex items-center gap-1">
+                        <FiUserCheck size={14} /> {service.bestFor}
+                      </span>
+                    )}
+                  </div>
+                  
+                  {service.details && (
+                    <div className="mt-4">
+                      <h4 className="mb-2 text-sm font-semibold uppercase text-jet/70">Treatment Highlights</h4>
+                      <ul className="space-y-1 text-sm text-jet/80">
+                        {service.details.map((detail, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="mt-1 text-salon-purple">
+                              <FiArrowRight size={12} />
+                            </span>
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="px-6 py-3 border-t bg-almond/10 border-almond/20">
+                  <button className="w-full py-2 text-sm font-medium tracking-wide text-white uppercase transition-all duration-300 rounded bg-salon-purple hover:bg-black">
+                    Book This Service
+                  </button>
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      <section className="py-16 bg-almond/20">
-        <div className="container px-4 mx-auto text-center">
+      {additionalContent}
+      
+      <section className="py-16 bg-gradient-to-br from-salon-purple/90 to-black/90">
+        <div className="container px-4 mx-auto">
           <SectionTitle
-            title="Ready to transform your look?"
-            subtitle="Book your appointment at Tryst Salon and let our experts create magic."
+            title="Ready to transform your skin?"
+            subtitle="Book your appointment at Tryst Salon and experience our premium skincare treatments."
             center
+            light
           />
 
           <motion.div
@@ -65,13 +108,19 @@ const ServiceTemplate = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '-100px' }}
-            className="mt-8"
+            className="flex flex-col items-center gap-4 mt-8 sm:flex-row sm:justify-center"
           >
             <a
               href="https://wa.me/1234567890"
-              className="inline-block px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all duration-300 bg-salon-purple hover:bg-black hover:text-white"
+              className="inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all duration-300 bg-black hover:bg-white hover:text-black"
             >
-              Book an Appointment
+              WhatsApp Booking
+            </a>
+            <a
+              href="tel:+1234567890"
+              className="inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider text-black uppercase transition-all duration-300 bg-white hover:bg-black hover:text-white"
+            >
+              Call Now
             </a>
           </motion.div>
         </div>
