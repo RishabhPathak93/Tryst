@@ -63,7 +63,7 @@ const HeroSection = ({
       <div className="container relative z-10 px-4 py-12 mx-auto">
         <div className="max-w-3xl">
           <motion.h1
-            className="mb-6 text-4xl leading-tight text-white sm:text-5xl md:text-6xl font-lora"
+            className="mb-6 text-lg leading-tight text-white sm:text-5xl md:text-5xl font-lora"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

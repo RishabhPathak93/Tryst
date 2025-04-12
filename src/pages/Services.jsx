@@ -61,8 +61,8 @@ const Services = () => {
   return (
     <div>
       <HeroSection
-        title="Updos to highlights"
-        subtitle="More than a cut. More than a colour and curl. It is a lasting impression."
+        title="The Beauty Edit"
+        subtitle="Your Go-To Rituals for Radiant Skin, Luscious Hair, Flawless Nails & Total Self-Care  ."
         backgroundImage={backgroundImage}
         backgroundVideo={backgroundVideo}
         buttonText="BOOK NOW"

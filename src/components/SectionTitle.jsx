@@ -15,13 +15,18 @@ const SectionTitle = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: '-100px' }}
-      className={`mb-4 md:mb-12 ${center ? 'text-center' : ''} ${className}`}
+      className={`mb-6 md:mb-12 px-4 sm:px-6 md:px-8 ${center ? 'text-center' : ''} ${className}`}
     >
-      <h2 className={`text-2xl sm:text-3xl md:text-4xl font-lora mb-3 md:mb-4 ${light ? 'text-white' : 'text-dark-green'}`}>
+      <h2 className={`text-2xl sm:text-3xl md:text-4xl font-lora font-semibold mb-4 ${light ? 'text-white' : 'text-dark-green'}`}>
         {title}
       </h2>
+
       {subtitle && (
-        <p className={`text-sm sm:text-base md:text-lg max-w-2xl ${center ? 'mx-auto' : ''} ${light ? 'text-white/80' : 'text-brown/80'}`}>
+        <p
+          className={`text-base md:text-lg leading-relaxed tracking-normal max-w-3xl ${
+            center ? 'mx-auto' : ''
+          } ${light ? 'text-white/80' : 'text-brown/80'} text-justify`}
+        >
           {subtitle}
         </p>
       )}

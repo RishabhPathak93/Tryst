@@ -6,32 +6,32 @@ const SkinPage = () => {
     {
       name: "Facial Treatments",
       description: "Luxurious facials customized for your skin type using premium products",
-      price: "₹2499 onwards"
+      price: "@2499 onwards"
     },
     {
       name: "Chemical Peels",
       description: "Advanced chemical peels for skin rejuvenation and texture improvement",
-      price: "₹3999 onwards"
+      price: "@3999 onwards"
     },
     {
       name: "Microdermabrasion",
       description: "Diamond tip microdermabrasion for refined and renewed skin",
-      price: "₹2999 onwards"
+      price: "@2999 onwards"
     },
     {
       name: "Acne Treatment",
       description: "Targeted treatments for acne using medical-grade products",
-      price: "₹2499 onwards"
+      price: "@2499 onwards"
     },
     {
       name: "Anti-Aging Treatment",
       description: "Premium anti-aging treatments using advanced technology",
-      price: "₹4999 onwards"
+      price: "@4999 onwards"
     },
     {
       name: "Skin Consultation",
       description: "Comprehensive skin analysis with personalized treatment plan",
-      price: "₹999 onwards"
+      price: "@999 onwards"
     }
   ];
 

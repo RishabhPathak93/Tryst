@@ -6,32 +6,32 @@ const SPMUPage = () => {
     {
       name: "Microblading",
       description: "Natural-looking, semi-permanent eyebrow enhancement",
-      price: "Starts at ₹33,200"
+      price: "Starts at @33,200"
     },
     {
       name: "Powder Brows",
       description: "Soft, powdered eyebrow look that lasts",
-      price: "Starts at ₹37,400"
+      price: "Starts at @37,400"
     },
     {
       name: "Lip Blush",
       description: "Semi-permanent lip color enhancement",
-      price: "Starts at ₹41,500"
+      price: "Starts at @41,500"
     },
     {
       name: "Eyeliner",
       description: "Long-lasting definition for your eyes",
-      price: "Starts at ₹29,100"
+      price: "Starts at @29,100"
     },
     {
       name: "Color Boost",
       description: "Touch-up service for existing SPMU treatments",
-      price: "Starts at ₹16,600"
+      price: "Starts at @16,600"
     },
     {
       name: "Consultation",
       description: "Professional consultation and patch test",
-      price: "Starts at ₹4,150"
+      price: "Starts at @4,150"
     }
   ];
 

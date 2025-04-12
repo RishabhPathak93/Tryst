@@ -6,32 +6,32 @@ const HairPage = () => {
     {
       name: "Haircut & Style",
       description: "Expert haircut and styling personalized to enhance your unique features",
-      price: "₹999 onwards"
+      price: "@999 onwards"
     },
     {
       name: "Hair Coloring",
       description: "Premium hair coloring including global color, highlights, and balayage",
-      price: "₹2999 onwards"
+      price: "@2999 onwards"
     },
     {
       name: "Hair Treatments",
       description: "Luxury hair treatments including Olaplex, keratin, and specialized hair spa",
-      price: "₹1999 onwards"
+      price: "@1999 onwards"
     },
     {
       name: "Blowout & Styling",
       description: "Professional blow dry and styling for any occasion with lasting results",
-      price: "₹899 onwards"
+      price: "@899 onwards"
     },
     {
       name: "Hair Extensions",
       description: "High-quality hair extensions for added length and volume",
-      price: "₹15000 onwards"
+      price: "@15000 onwards"
     },
     {
       name: "Bridal Hair",
       description: "Exquisite bridal hair styling for your special day",
-      price: "₹8000 onwards"
+      price: "@8000 onwards"
     }
   ];
 

@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
-import logo from '../assets/images/trystlogo.jpg'
+import logo from '../assets/images/tryst salon and academy.png'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation()
@@ -78,6 +78,7 @@ const MainLayout = () => {
         { name: 'SPMU', path: '/services/spmu' }
       ]
     },
+    {name:'MAKEUP',path:'/services/makeup'},
     { name: 'BLOG', path: '/blog' },
     {
       name: 'BOOK APPOINTMENT',
@@ -115,7 +116,7 @@ const MainLayout = () => {
       {/* Header */}
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-beige/95 shadow-md py-2' : 'bg-transparent py-4'
+          isScrolled ? 'bg-[#2b3f2a] shadow-md py-3' : 'bg-[#2b3f2a] py-3'
         }`}
       >
         <div className='container flex items-center justify-between px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
@@ -136,14 +137,14 @@ const MainLayout = () => {
                     href={link.path}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='relative text-xs font-medium tracking-wider uppercase transition text-brown hover:text-dark-green group'
+                    className='relative text-xs font-medium tracking-wider uppercase transition text-[#eaded5] hover:underline group'
                   >
                     {link.name}
                   </a>
                 ) : (
                   <Link
                     to={link.path}
-                    className='relative text-xs font-medium tracking-wider uppercase transition text-brown hover:text-dark-green group'
+                    className='relative text-xs font-medium tracking-wider uppercase transition text-[#eaded5] hover:underline group'
                     onClick={handleNavigation}
                   >
                     {link.name}
@@ -160,7 +161,7 @@ const MainLayout = () => {
             aria-label='Toggle menu'
           >
             <svg
-              className='w-6 h-6 text-brown'
+              className='w-6 h-6 text-[#917565]'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -332,7 +333,7 @@ const MainLayout = () => {
       </main>
 
       {/* Footer */}
-      <footer className='py-6 text-light-gray bg-dark-green'>
+      <footer className='py-6 text-light-gray bg-[#2b3f2a]'>
         <div className='container px-4 mx-auto'>
           <div className='grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
             {footerSections.map((section, index) => (

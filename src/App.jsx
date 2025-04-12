@@ -16,6 +16,7 @@ import SkinPage from './pages/services/Skin';
 import SpaPage from './pages/services/Spa';
 import GroomingPage from './pages/services/Grooming';
 import SPMUPage from './pages/services/SPMU';
+import Makeup from './pages/services/Makeup';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="services/spa" element={<SpaPage />} />
         <Route path="services/grooming" element={<GroomingPage />} />
         <Route path="services/spmu" element={<SPMUPage />} />
+        <Route path="services/makeup" element={<Makeup />} />
       </Route>
 
       {/* Admin Routes */}

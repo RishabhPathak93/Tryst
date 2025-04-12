@@ -135,7 +135,7 @@ const Offers = () => {
 
                       <div className="mb-6">
                         <div className="flex items-baseline mb-4">
-                          <span className="text-3xl font-bold text-jet">₹{offer.price}</span>
+                          <span className="text-3xl font-bold text-jet">@{offer.price}</span>
                           {offer.price !== 'Custom' && (
                             <span className="ml-1 text-sm text-jet/60">only</span>
                           )}

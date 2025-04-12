@@ -20,7 +20,7 @@ const Home = () => {
     {
       id: 1,
       title: 'Hair',
-      description: 'Cut, color, or cure — every visit is your chance to reinvent, refresh, and reveal your best self.',
+      description: 'Whether it’s a sharp fade, a perfectly styled look, or grooming that exudes confidence — our skilled stylists are here to keep you looking effortlessly polished. Precision, style, and attention to detail — all tailored to suit your unique personality and preferences.',
       image: salon1,
       link: '/services/hair',
       reversed: false
@@ -28,7 +28,7 @@ const Home = () => {
     {
       id: 2,
       title: 'Skin',
-      description: 'From clean-ups to indulgent facials — let your skin glow with care, every single time.',
+      description: "Whether youre after a quick refresh or a high-performance skin treatment, we’ve got you covered. From gentle exfoliation and deep hydration to targeted solutions for fine lines, dark spots, and dullness — our treatments are designed to bring out your best skin.",
       image: salon2,
       link: '/services/skin',
       reversed: true
@@ -54,8 +54,8 @@ const Home = () => {
   return (
     <div className="bg-white">
       <HeroSection
-        title="What you wear starts with your hair"
-        subtitle="Walk in for more than a cut, curl or cure. We have got you covered, head to toe."
+        title="Own your day with confidence — and hair that’s ready to steal the spotlight! "
+        subtitle="We specialize in precision cuts and expert styling, offering personalized services that match your mood, your vibe, and every occasion!"
         backgroundImage={heroImage}
         backgroundVideo={heroVideo}
       />
@@ -63,8 +63,8 @@ const Home = () => {
       <section className="py-16 bg-champagne-pink/10">
         <div className="container px-4 mx-auto">
           <SectionTitle
-            title="More than a salon"
-            subtitle="In a time everyone's hair looked same, came a brother-sister duo with a vision to transform. Your hair. Your lives."
+            title="Snip, Style, Slay!"
+            subtitle="From sleek bobs to flowing layers, our expert stylists are masters of every strand, every cut, and every style. Whether you're after a flawless blowout, beachy waves, curly haircut & styling, a deep conditioning treat, or a full-on glam transformation — we’ve got you covered."
             center
           />
 
@@ -110,7 +110,7 @@ const Home = () => {
         <div className="container px-4 mx-auto mt-16 text-center">
           <Link
             to="/services"
-            className="inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-brown border-dark-green hover:bg-dark-green hover:text-white"
+            className="inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-[#917565] border-dark-green hover:bg-dark-green hover:text-white"
           >
             Explore all services
           </Link>
@@ -136,7 +136,7 @@ const Home = () => {
                 viewport={{ once: true, margin: '-100px' }}
               >
                 <Link
-                  to="/work"
+                  to="https://www.instagram.com/tryst.salon/"
                   className="inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-brown border-dark-green hover:bg-dark-green hover:text-white"
                 >
                   View our work
@@ -215,17 +215,6 @@ const Home = () => {
               />
 
               <div className="mb-8 space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  className="flex items-center"
-                >
-                  <div className="mr-2 font-medium text-jet">Bangalore:</div>
-                  <a href="tel:+918880903903" className="text-jet hover:underline">8880903903</a>
-                </motion.div>
-
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
