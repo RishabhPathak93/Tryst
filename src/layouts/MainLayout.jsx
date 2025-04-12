@@ -328,9 +328,9 @@ const MainLayout = () => {
       </AnimatePresence>
 
       {/* Main Content */}
-      <main className='flex-grow pt-20'>
-        <Outlet />
-      </main>
+      <main className={`flex-grow ${isScrolled ? 'pt-16' : 'pt-12'}`}>
+  <Outlet />
+</main>
 
       {/* Footer */}
       <footer className='py-6 text-light-gray bg-[#2b3f2a]'>
