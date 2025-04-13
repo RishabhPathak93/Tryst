@@ -1,8 +1,9 @@
 import { Link, Outlet, Navigate } from 'react-router-dom';
 
 const AdminLayout = () => {
-  const isAuthenticated = localStorage.getItem('isAdminAuthenticated') === 'true';
-
+  const token = localStorage.getItem('token');
+  const isAuthenticated = token && localStorage.getItem('isAdminAuthenticated') === 'true';
+  
   if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace />;
   }

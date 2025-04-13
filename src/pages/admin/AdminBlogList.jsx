@@ -5,17 +5,58 @@ const AdminBlogList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const savedPosts = localStorage.getItem('blog_posts');
-    if (savedPosts) {
-      setPosts(JSON.parse(savedPosts));
-    }
+    const fetchPosts = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('Not authenticated!');
+        return;
+      }
+
+      try {
+        const res = await fetch('http://localhost:5000/admin/blogs', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          setPosts(data);
+        } else {
+          alert('Failed to fetch blogs: ' + data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+        alert('Server error while fetching blogs.');
+      }
+    };
+
+    fetchPosts();
   }, []);
 
-  const handleDelete = (id) => {
-    if (window.confirm('Are you sure you want to delete this post?')) {
-      const updatedPosts = posts.filter((post) => post.id !== id);
-      localStorage.setItem('blog_posts', JSON.stringify(updatedPosts));
-      setPosts(updatedPosts);
+  const handleDelete = async (id) => {
+    const confirmed = window.confirm('Are you sure you want to delete this post?');
+    if (!confirmed) return;
+
+    const token = localStorage.getItem('token');
+
+    try {
+      const res = await fetch(`http://localhost:5000/admin/blogs/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (res.ok) {
+        setPosts((prev) => prev.filter((post) => post.id !== id));
+      } else {
+        const err = await res.json();
+        alert('Failed to delete post: ' + err.message);
+      }
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      alert('Server error while deleting post.');
     }
   };
 
