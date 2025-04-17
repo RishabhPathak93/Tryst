@@ -6,17 +6,32 @@ const AdminLogin = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, this would be a secure authentication process
-    // For demo purposes, using a simple passkey
-    if (passkey === 'tryst2024') {
-      localStorage.setItem('isAdminAuthenticated', 'true');
-      navigate('/admin/blog');
-    } else {
-      setError('Invalid passkey');
+    setError('');
+  
+    try {
+      const res = await fetch('http://localhost:5000/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: 'admin', password: passkey }),
+      });
+  
+      const data = await res.json();
+  
+      if (res.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('isAdminAuthenticated', 'true');
+        navigate('/admin/blog');
+      } else {
+        setError(data.message || 'Invalid credentials');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Server error. Please try again.');
     }
   };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -28,9 +43,11 @@ const AdminLogin = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="passkey" className="block text-sm font-medium text-gray-700">
-              Passkey
-            </label>
+          <label htmlFor="passkey" className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+
+
             <input
               type="password"
               id="passkey"

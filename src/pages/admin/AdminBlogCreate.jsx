@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const CATEGORIES = [
@@ -25,23 +25,7 @@ const AdminBlogCreate = () => {
   const [imagePreview, setImagePreview] = useState('');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (id) {
-      const savedPosts = JSON.parse(localStorage.getItem('blog_posts') || '[]');
-      const post = savedPosts.find((p) => p.id === id);
-      if (post) {
-        setFormData({
-          title: post.title,
-          content: post.content,
-          category: post.category || CATEGORIES[0],
-        });
-        if (post.image) {
-          setImagePreview(post.image);
-        }
-      }
-    }
-  }, [id]);
-
+ 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -61,9 +45,16 @@ const AdminBlogCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('You are not authenticated!');
+        return;
+      }
+  
       let imageUrl = imagePreview;
+  
       if (selectedImage) {
         imageUrl = await new Promise((resolve) => {
           const reader = new FileReader();
@@ -71,36 +62,40 @@ const AdminBlogCreate = () => {
           reader.readAsDataURL(selectedImage);
         });
       }
-
-      const savedPosts = JSON.parse(localStorage.getItem('blog_posts') || '[]');
+  
       const newPost = {
-        id: id || Date.now().toString(),
         title: formData.title,
         content: formData.content,
         excerpt: formData.content.slice(0, 150) + '...',
         author: 'Tryst Salon',
-        date: id ? savedPosts.find((p) => p.id === id)?.date || new Date().toISOString() : new Date().toISOString(),
+        date: new Date().toISOString(),
         category: formData.category,
         image: imageUrl,
       };
-
-      if (id) {
-        const updatedPosts = savedPosts.map((post) =>
-          post.id === id ? newPost : post
-        );
-        localStorage.setItem('blog_posts', JSON.stringify(updatedPosts));
+  
+      const res = await fetch('http://localhost:5000/admin/blogs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(newPost),
+      });
+  
+      if (res.ok) {
+        alert('Blog saved successfully!');
+        navigate('/admin/blog');
       } else {
-        localStorage.setItem('blog_posts', JSON.stringify([...savedPosts, newPost]));
+        const err = await res.json();
+        alert('Error: ' + err.message);
       }
-
-      navigate('/admin/blog');
     } catch (error) {
       console.error('Error saving post:', error);
       alert('Error saving post. Please try again.');
     } finally {
       setLoading(false);
     }
-  };
+  };  
 
   const handleChange = (e) => {
     setFormData((prev) => ({
