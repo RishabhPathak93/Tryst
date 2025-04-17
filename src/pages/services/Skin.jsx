@@ -1,5 +1,5 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/skin.jpeg';
+import backgroundImage from '../../assets/images/44.jpg';
 
 const SkinPage = () => {
   const skinServices = [

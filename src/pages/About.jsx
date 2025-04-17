@@ -3,8 +3,8 @@ import HeroSection from '../components/HeroSection'
 import SectionTitle from '../components/SectionTitle'
 import { Link } from 'react-router-dom'
 import heroImage from '../assets/images/hero.jpeg'
-import salon1Image from '../assets/images/salon1.jpg'
-import heroVideo from '../assets/HeroVideo-recompressed.mp4'
+import salon1Image from '../assets/images/11.jpg'
+import heroVideo from '../assets/TrystBackground.mp4'
 
 const About = () => {
   return (

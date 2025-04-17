@@ -1,5 +1,5 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/service4.jpg'
+import backgroundImage from '../../assets/images/30.jpg'
 
 const SPMUPage = () => {
   const spmuServices = [

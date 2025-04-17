@@ -1,5 +1,6 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/nail.jpeg';
+import backgroundImage from '../../assets/images/49.jpg';
+
 
 const NailPage = () => {
   const nailServices = [

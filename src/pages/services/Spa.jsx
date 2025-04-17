@@ -1,5 +1,5 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/spa.jpeg'
+import backgroundImage from '../../assets/images/78.jpg'
 
 const SpaPage = () => {
   const spaServices = [

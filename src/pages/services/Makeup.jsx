@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import HeroSection from '../../components/HeroSection';
 import SectionTitle from '../../components/SectionTitle';
-import backgroundVideo from '../../assets/HeroVideo-recompressed.mp4';
+import backgroundVideo from '../../assets/TrystBackground.mp4';
 import backgroundImage from '../../assets/images/hero-bg.jpg';
 
 const Makeup = () => {

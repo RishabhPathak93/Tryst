@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import ServicesGrid from '../components/ServicesGrid';
-import backgroundVideo from '../assets/HeroVideo-recompressed.mp4';
+import backgroundVideo from '../assets/TrystBackground.mp4';
 import backgroundImage from '../assets/images/hero-bg.jpg';
-import service1 from '../assets/images/hair.jpeg';
-import service2 from '../assets/images/skin.jpeg';
-import service3 from '../assets/images/grooming.jpeg';
-import service4 from '../assets/images/spa.jpeg';
-import service5 from '../assets/images/nail.jpeg';
-import service6 from '../assets/images/salon4.jpg';
+import service1 from '../assets/images/8.jpg';
+import service2 from '../assets/images/44.jpg';
+import service3 from '../assets/images/18.jpg';
+import service4 from '../assets/images/78.jpg';
+import service5 from '../assets/images/60.jpg';
+import service6 from '../assets/images/30.jpg';
 
 
 const Services = () => {

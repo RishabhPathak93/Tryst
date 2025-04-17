@@ -1,5 +1,5 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/grooming.jpeg'
+import backgroundImage from '../../assets/images/18.jpg'
 
 const GroomingPage = () => {
   const groomingServices = [
