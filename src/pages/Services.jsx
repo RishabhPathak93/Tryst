@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import ServicesGrid from '../components/ServicesGrid';
 import backgroundVideo from '../assets/TrystBackground.mp4';
 import backgroundImage from '../assets/images/hero-bg.jpg';
-import service1 from '../assets/images/8.jpg';
+import service1 from '../assets/images/11.jpg';
 import service2 from '../assets/images/44.jpg';
 import service3 from '../assets/images/18.jpg';
 import service4 from '../assets/images/78.jpg';
