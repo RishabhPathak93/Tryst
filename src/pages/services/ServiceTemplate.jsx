@@ -23,7 +23,7 @@ const ServiceTemplate = ({
         <div className='w-full text-center'>
           <SectionTitle
             title='Our Services'
-            subtitle='Experience excellence with our carefully curated range of premium services'
+            subtitle=' Enjoy personalized consultations, precision styling, and makeover magic all under one roof. Book your appointment today and let us help you slay your next look with confidence and flair!'
             center
           />
 
@@ -44,10 +44,10 @@ const ServiceTemplate = ({
                 className='flex flex-col overflow-hidden transition-all duration-300 bg-white border rounded-lg shadow-sm hover:shadow-md border-almond/30'
               >
                 <div className='flex flex-col flex-grow p-6 text-center'>
-                  <h3 className='mb-3 text-xl font-bold font-lora text-salon-purple'>
+                  <h3 className='mb-3 text-xl font-bold font-lora text-salon-purple '>
                     {service.name}
                   </h3>
-                  <p className='mb-4 text-jet/80'>{service.description}</p>
+                  <p className='mb-4 text-jet/80 text-justify'>{service.description}</p>
 
                   {service.price && (
                     <p className='mb-4 text-lg font-semibold text-salon-purple'>

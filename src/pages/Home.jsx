@@ -7,56 +7,67 @@ import { Link } from 'react-router-dom';
 import salon1 from '../assets/images/11.jpg';
 import salon2 from '../assets/images/44.jpg';
 import salon3 from '../assets/images/18.jpg';
-import salon4 from '../assets/images/78.jpg';
-import service1 from '../assets/images/12.jpg';
-import service2 from '../assets/images/13.jpg';
-import service3 from '../assets/images/18.jpg';
+import salon4 from '../assets/images/5.jpg';
+import service1 from '../assets/images/service1.jpg';
+import service2 from '../assets/images/service2.jpg';
+import service3 from '../assets/images/service3.jpg';
 import heroBg from '../assets/images/13.jpg';
+import salon5 from '../assets/images/28.jpg'
 import heroImage from '../assets/images/hero.jpeg';
 import heroVideo from '../assets/TrystBackground.mp4';
+
+
 
 
 const Home = () => {
   const services = [
     {
       id: 1,
-      title: 'Hair',
-      description: 'Whether it’s a sharp fade, a perfectly styled look, or grooming that exudes confidence — our skilled stylists are here to keep you looking effortlessly polished. Precision, style, and attention to detail — all tailored to suit your unique personality and preferences.',
+      title: "Women's Hair",
+      description: 'Own your day with confidence — and hair that’s ready to steal the spotlight! We specialize in precision cuts and expert styling, offering personalized services that match your mood, your vibe, and every occasion!',
       image: salon1,
       link: '/services/hair',
       reversed: false
     },
     {
       id: 2,
-      title: 'Skin',
-      description: "Whether youre after a quick refresh or a high-performance skin treatment, we’ve got you covered. From gentle exfoliation and deep hydration to targeted solutions for fine lines, dark spots, and dullness — our treatments are designed to bring out your best skin.",
+      title: 'Hair Colouring',
+      description: "At Tryst, we don’t just color hair — we create head-turning magic! Whether you’re vibing with ombré, craving bold streaks, or dreaming of balayage, foliage, highlights, or even money piece (yep, we do that too!) — we’ve got the skills to make it pop. Pick your vibe with our Sunkissed or À La Carte color options — both designed to keep your hair healthy while bringing major color energy. No damage, just pure hair happiness!",
       image: salon2,
-      link: '/services/skin',
+      link: '/services/Haircolor',
       reversed: true
     },
     {
       id: 3,
-      title: 'Grooming',
-      description: 'From scrubs and trims to sharp beards and fresh faces — grooming here is a ritual of self-respect and style.',
-      image: salon3,
-      link: '/services/grooming',
+      title: 'Skin',
+      description: "Whether youre after a quick refresh or a high-performance skin treatment, we’ve got you covered. From gentle exfoliation and deep hydration to targeted solutions for fine lines, dark spots, and dullness — our treatments are designed to bring out your best skin.",
+      image: salon5,
+      link: '/services/skin',
       reversed: false
     },
     {
       id: 4,
-      title: 'Spa',
-      description: 'Celebrate every kind of day with spa indulgence — because self-care isn’t just for special occasions.',
-      image: salon4,
-      link: '/services/spa',
+      title: "Men's Hair",
+      description: "At Tryst, men’s hair and grooming isn’t an afterthought — it’s a craft. From sharp beard shaping to sleek haircuts and personalized styling, we offer a full spectrum of services tailored just for you. With a team of skilled stylists, each bringing their unique flair, you're sure to find the perfect match for your vibe. Ready to elevate your look? Book your session today. ",
+      image: salon3,
+      link: '/services/Menshair',
       reversed: true
+    },
+    {
+      id: 5,
+      title: 'Hair Texture',
+      description: 'For smoother texture and long-lasting shine, explore our advanced smoothing services or treat yourself to our premium, professional Hair Botox treatment — formaldehyde-free, absolutely safe, and completely transformative.',
+      image: salon4,
+      link: '/services/Texture',
+      reversed: false
     }
   ];
 
   return (
     <div className="bg-white">
       <HeroSection
-        title="Own your day with confidence — and hair that’s ready to steal the spotlight! "
-        subtitle="We specialize in precision cuts and expert styling, offering personalized services that match your mood, your vibe, and every occasion!"
+        // title="Own your day with confidence — and hair that’s ready to steal the spotlight! "
+        // subtitle="We specialize in precision cuts and expert styling, offering personalized services that match your mood, your vibe, and every occasion!"
         backgroundImage={heroImage}
         backgroundVideo={heroVideo}
       />
@@ -64,8 +75,8 @@ const Home = () => {
       <section className="py-16 bg-champagne-pink/10">
         <div className="container px-4 mx-auto">
           <SectionTitle
-            title="Snip, Style, Slay!"
-            subtitle="From sleek bobs to flowing layers, our expert stylists are masters of every strand, every cut, and every style. Whether you're after a flawless blowout, beachy waves, curly haircut & styling, a deep conditioning treat, or a full-on glam transformation — we’ve got you covered."
+            title="#CraftedWithCare"
+            subtitle="We’re all about crafting confidence — through personalized care, thoughtful service, and a genuine commitment to clean beauty."
             center
           />
 
@@ -223,8 +234,8 @@ const Home = () => {
                   viewport={{ once: true, margin: '-100px' }}
                   className="flex items-center"
                 >
-                  <div className="mr-2 font-medium text-jet">Chennai:</div>
-                  <a href="tel:+917811903903" className="text-jet hover:underline">7811903903</a>
+                  <div className="mr-2 font-medium text-jet">Banglore: </div>
+                  <a href="tel:+917411058413" className="text-jet hover:underline">7411058413</a>
                 </motion.div>
 
                 <motion.div
@@ -234,8 +245,8 @@ const Home = () => {
                   viewport={{ once: true, margin: '-100px' }}
                   className="flex items-center"
                 >
-                  <div className="mr-2 font-medium text-jet">Hyderabad:</div>
-                  <a href="tel:+917601903903" className="text-jet hover:underline">7601903903</a>
+                  <div className="mr-2 font-medium text-jet">Banglore: </div>
+                  <a href="tel:+918035800762" className="text-jet hover:underline">8035800762</a>
                 </motion.div>
               </div>
 

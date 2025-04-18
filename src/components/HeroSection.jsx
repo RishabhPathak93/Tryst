@@ -8,8 +8,8 @@ const HeroSection = ({
   subtitle,
   backgroundImage,
   backgroundVideo,
-  buttonLink = "https://wa.me/1234567890",
-  buttonText = "BOOK AN APPOINTMENT NOW",
+  buttonLink = "",
+  buttonText = "",
 }) => {
   const videoRef = useRef(null);
 

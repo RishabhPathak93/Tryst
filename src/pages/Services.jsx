@@ -10,13 +10,14 @@ import service3 from '../assets/images/18.jpg';
 import service4 from '../assets/images/78.jpg';
 import service5 from '../assets/images/60.jpg';
 import service6 from '../assets/images/30.jpg';
+import service7 from "../assets/images/183.jpg";
 
 
 const Services = () => {
   const serviceCategories = [
     {
       id: 1,
-      title: 'Hair',
+      title: "Women's Hair",
       description: 'From classic cuts to trendy styles, our expert stylists create looks that enhance your natural beauty.',
       image: service1,
       link: '/services/hair'
@@ -30,17 +31,17 @@ const Services = () => {
     },
     {
       id: 3,
-      title: 'Grooming',
+      title: "Men's Hair",
       description: 'Professional grooming services to keep you looking sharp and well-maintained.',
       image: service3,
       link: '/services/grooming'
     },
     {
       id: 4,
-      title: 'Spa',
+      title: 'Texture',
       description: 'Indulge in relaxing spa treatments that rejuvenate your body and mind.',
       image: service4,
-      link: '/services/spa'
+      link: '/services/Texture'
     },
     {
       id: 5,
@@ -51,10 +52,17 @@ const Services = () => {
     },
     {
       id: 6,
-      title: 'Semi Permanent Make Up',
+      title: 'Make Up',
       description: 'Enhance your natural features with long-lasting semi-permanent makeup solutions.',
       image: service6,
-      link: '/services/semi-permanent-makeup'
+      link: '/services/makup'
+    },
+    {
+      id: 7,
+      title: 'The Beauty Edit',
+      description: 'Your Must-Have Rituals for Smooth, Glowing Skin. ',
+      image: service7,
+      link: '/services/edit'
     }
   ];
 

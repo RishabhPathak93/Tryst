@@ -5,28 +5,73 @@ import SectionTitle from './SectionTitle';
 const testimonials = [
   {
     id: 1,
-    content: "I've been a loyal customer for years. The stylists here are exceptional, and I always leave feeling like a new person.",
-    author: "Sarah Johnson",
+    content: "Awesome experience ..appointments were easily available and they were so warm and equally professional ..OT was a pleasant experience .thank u for being considerate too. Nail gel paint was also beautifully and patiently done. Curl hair cut is a challenge by itself but they did it beautifully.",
+    author: "Deepa Santhosh",
     location: "Bangalore"
   },
   {
     id: 2,
-    content: "The attention to detail and personalized service is what keeps me coming back. They truly understand what I want.",
-    author: "Priya Sharma",
-    location: "Chennai"
+    content: "I recently visited this salon and had a fantastic experience. Imran did an excellent job with my haircut…it turned out exactly as I wanted. Kunti with top-notch nail service, leaving me very satisfied with the results. The atmosphere was welcoming, and the staff were friendly and professional.",
+    author: "Reshma Angadi",
+    location: "Bangalore"
   },
   {
     id: 3,
-    content: "From the moment you walk in, you're treated like royalty. The ambiance is peaceful, and the results are always perfect.",
-    author: "Raj Patel",
-    location: "Hyderabad"
+    content: "If you want to pamper yourself to a rejuvenating salon treatment then Tryst is the place to go to! Got a pedi, facial and hair spa done and it was so worth it! Vikas, Sudeeksha and Kanti were simply fantastic. Tryst also has some amazing products and they've got some good deals and offers on! Do give this place a try!",
+    author: "Kanisha Gulwadi",
+    location: "Bangalore"
   },
   {
     id: 4,
-    content: "I appreciate how they stay on top of trends while still giving practical advice for my hair type and lifestyle.",
-    author: "Aisha Khan",
+    content: "Loved the service, we did men and women both hair wash and hair cuts, good stylists, vikas and nizam, co operative staff, reasonable pricing. Must visit. Recommended.",
+    author: "Rabiya Shaikh",
     location: "Bangalore"
-  }
+  },
+  {
+    id: 5,
+    content: "My daughters and me were very happy with the way the store people discussed and brought the best for us. Yonus did an amazing job and complete makeover of my daughters. Keep up the good work 👏🏻👏🏻",
+    author: "Anusha R",
+    location: "Bangalore"
+  },
+  {
+    id: 6,
+    content: "A Fantastic experience,very patient and nice service by Vikas.The place is Beautifully Done up.Very Clean and Crisp.",
+    author: "Reshma Angadi",
+    location: "Bangalore"
+  },
+  {
+    id: 7,
+    content: "Clean, beautiful space coupled with very skilled and kind stylists makes this salon a great choice.",
+    author: "Jyothsna Deshpande",
+    location: "Bangalore"
+  },
+  {
+    id: 8,
+    content: "I had the most amazing experience at Tryst, and I couldn’t wait to share! I opted for a scalp detox treatment, a pedicure, and a haircut—and each service exceeded my expectations.",
+    author: "Deboleena",
+    location: "Bangalore"
+  },
+  {
+    id: 9,
+    content: "my experience was so good , they dont misguide you they properly do your skin or hair consultation before doing anything and they advise the best for you , I am a regular customer of tryst now and no other place feels better than this 😍",
+    author: "Chetan Shriyan",
+    location: "Bangalore"
+  },
+  {
+    id: 10,
+    content: "Tryst is an oasis for hair, body and mind. As you step into this salon you’re transported to serene bliss. Every member of the specialist team is kind, super professional and extremely talented. I had the most amazing (heavenly) body scrub experience at Tryst - while my friends had their hair and nails transformed. I recommend this team highly, if you’re looking for quality and exceptional care - especially for curly South Asian hair…the results were magic!",
+    author: "Shanti Pathmanathan",
+    location: "Bangalore"
+  },
+  {
+    id: 11,
+    content: "This salon is a hidden gem for anyone with curly hair in South Bangalore! I went in specifically for a curly hair dry cut and treatment, and it was the best decision I've made for my locks in a long time.",
+    author: "Naimisha Sanjay",
+    location: "Bangalore"
+  },
+  
+  
+  
 ];
 
 const TestimonialSection = () => {
@@ -44,8 +89,8 @@ const TestimonialSection = () => {
     <section className="py-16 bg-champagne_pink/20">
       <div className="container px-4 mx-auto">
         <SectionTitle
-          title="What our clients say"
-          subtitle="Don't just take our word for it, hear from our satisfied clients."
+          title="What our clients love about us"
+          subtitle="Real feedback from real clients — here's what they had to say."
           center
         />
 

@@ -25,7 +25,7 @@ const SectionTitle = ({
         <p
           className={`text-base md:text-lg leading-relaxed tracking-normal max-w-3xl ${
             center ? 'mx-auto' : ''
-          } ${light ? 'text-white/80' : 'text-brown/80'} text-justify`}
+          } ${light ? 'text-white/80' : 'text-brown/80'} text-center`}
         >
           {subtitle}
         </p>

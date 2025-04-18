@@ -13,10 +13,14 @@ import Offers from './pages/Offers';
 import HairPage from './pages/services/Hair';
 import NailPage from './pages/services/Nail';
 import SkinPage from './pages/services/Skin';
-import SpaPage from './pages/services/Spa';
-import GroomingPage from './pages/services/Grooming';
+import Haircolor from './pages/services/Haircolor';
+import Texture from './pages/services/Texture';
+// import GroomingPage from './pages/services/Grooming';
 import SPMUPage from './pages/services/SPMU';
 import Makeup from './pages/services/Makeup';
+import Menshair from './pages/services/Menshair';
+import Makup from './pages/services/make';
+import Bedit from './pages/services/edit';
 
 function App() {
   return (
@@ -32,10 +36,16 @@ function App() {
         <Route path="services/hair" element={<HairPage />} />
         <Route path="services/nail" element={<NailPage />} />
         <Route path="services/skin" element={<SkinPage />} />
-        <Route path="services/spa" element={<SpaPage />} />
-        <Route path="services/grooming" element={<GroomingPage />} />
+        <Route path="services/Menshair" element={<Menshair />} />
+        <Route path="services/Haircolor" element={<Haircolor />} />
+        <Route path="services/Texture" element={<Texture />} />
+        {/* <Route path="services/grooming" element={<GroomingPage />} /> */}
         <Route path="services/spmu" element={<SPMUPage />} />
         <Route path="services/makeup" element={<Makeup />} />
+        <Route path="services/makup" element={<Makup />} />
+        <Route path="services/edit" element={<Bedit />} />
+
+
       </Route>
 
       {/* Admin Routes */}

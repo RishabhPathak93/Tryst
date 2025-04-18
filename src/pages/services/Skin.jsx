@@ -1,76 +1,43 @@
 import ServiceTemplate from './ServiceTemplate';
-import backgroundImage from '../../assets/images/44.jpg';
+import backgroundImage from '../../assets/images/77.jpg';
 
 const SkinPage = () => {
   const skinServices = [
     {
-      name: "Facial Treatments",
-      description: "Luxurious facials customized for your skin type using premium products",
-      price: "₹2499 onwards",
-      details: [
-        "Deep cleansing and intense hydration treatments",
-        "Targeted solutions for fine lines and dark spots",
-        "Skin brightening and rejuvenation therapies"
-      ],
+      name: "Clean Up",
+      description: "Our silicone- and paraben-free clean-up deeply purifies the skin and promotes the renewal of the outermost layers, leaving your complexion visibly brighter and healthier. Regular sessions help enhance your skin’s tone and texture for a naturally radiant glow.",
+      duration: "25-30 mins",
+      bestFor: "All skin types"
+    },
+    {
+      name: "Detan",
+      description: "More than just detan - What sets us apart? Our Detan service goes beyond skincare. We include calming warm towel rituals to help you unwind and de-stress, turning your session into a truly relaxing experience. It’s not just a treatment—it’s self-care, redefined.",
+      duration: "20-25 mins",
+      bestFor: "All skin types"
+    },
+    {
+      name: "Face Treatments",
+      description: "Looking to relax and de-stress? Our luxurious facials are designed to help you unwind. Got skin concerns? We tailor each treatment to your unique needs—be it acne, pigmentation, dryness, or sensitivity. Choose from a wide range of facials, including advanced machine-based treatments and HydraFacials for deeper product penetration and enhanced results. Whatever your skin goals, we’ve got the perfect facial for you!",
       duration: "60-90 mins",
       bestFor: "All skin types"
     },
     {
-      name: "Chemical Peels",
-      description: "Advanced skin rejuvenation for texture improvement and glow",
-      price: "₹3999 onwards",
-      details: [
-        "Reduce appearance of fine lines and deep lines",
-        "Combat dullness and uneven skin tone",
-        "Professional-grade solutions for radiant skin"
-      ],
-      duration: "45-60 mins",
-      bestFor: "Aging, dull skin"
+      name: "Add On Mask",
+      description: "Elevate your skincare routine with our refreshing masks, each designed to offer an added layer of rejuvenation. Whether infused with essential oils, Vitamin C, or marine extracts, these masks are crafted from natural ingredients that mold effortlessly to your face and neck, like a second skin. The unique combination of marine elements soothes and revitalizes, enhancing hydration and fortifying the skin's protective barrier. With the added benefits of Vitamin C, these masks brighten and firm, leaving your complexion glowing and youthful.",
+      duration: "10-15 mins",
+      bestFor: "All skin types"
     },
     {
-      name: "Microdermabrasion",
-      description: "Diamond tip treatment for refined and renewed skin surface",
-      price: "₹2999 onwards",
-      duration: "30-45 mins",
-      bestFor: "Texture improvement"
-    },
-    {
-      name: "Acne Treatment",
-      description: "Medical-grade targeted solutions for clear skin",
-      price: "₹2499 onwards",
-      duration: "60 mins",
-      bestFor: "Acne-prone skin"
-    },
-    {
-      name: "Anti-Aging Treatment",
-      description: "Premium age-reversing treatments with advanced technology",
-      price: "₹4999 onwards",
-      details: [
-        "Turn back time with our specialized therapies",
-        "Combat pigmentation and restore elasticity",
-        "Personalized solutions for your skin concerns"
-      ],
-      duration: "90 mins",
-      bestFor: "Mature skin"
+      name: "Face Massage Only",
+      description: "Relax, unwind, and let your stress melt away with our exclusive Massage Only treatment. Perfect for soothing your muscles and refreshing your mind, it's the ultimate escape to pure relaxation.",
+      duration: "25-30 mins",
+      bestFor: "All skin types"
     },
     {
       name: "Skin Consultation",
       description: "Comprehensive analysis with personalized treatment plan",
-      price: "₹999 onwards",
       duration: "30 mins",
-      bestFor: "First-time clients"
-    },
-    {
-      name: "Massage Therapies",
-      description: "Pure relaxation designed to melt away stress and soothe your senses",
-      price: "₹3499 onwards",
-      details: [
-        "Performed by skilled, trusted professionals",
-        "Personalized escape into deep relaxation",
-        "Restore balance and feel completely renewed"
-      ],
-      duration: "60-120 mins",
-      bestFor: "Stress relief"
+      bestFor: "All skin types"
     }
   ];
 
@@ -82,45 +49,6 @@ const SkinPage = () => {
       services={skinServices}
       additionalContent={
         <>
-          <section className="py-16 bg-white">
-            <div className="container max-w-4xl px-4 mx-auto">
-              <div className="p-8 rounded-lg bg-almond/10">
-                <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">SKIN CARE</h2>
-                <div className="space-y-4 text-jet/90">
-                  <p>Need a quick refresh or a deep, rejuvenating glow? Whether you're after an express clean-up or a high-performance skin treatment, we've got you covered. From gentle exfoliation and intense hydration to targeted solutions for fine lines, deep lines, dark spots, and dullness — explore our full range of skin treatments.</p>
-                  <p>From essential care and brightening to advanced anti-aging and skin repair, your glow-up starts here! Want to turn back time? Explore our wide range of treatments...</p>
-                </div>
-                
-                <h3 className="mt-8 mb-4 text-2xl font-semibold text-center font-lora text-salon-purple">Skin Deep, Glow Real</h3>
-                <div className="space-y-4 text-jet/90">
-                  <p>At Tryst, your skincare journey begins with a complimentary consultation from our expert professionals — tailored to your unique skin type and concerns. Our thoughtfully curated treatments are designed to nourish, rejuvenate, and celebrate your natural beauty — no matter your age, gender, or skin type.</p>
-                  <p>From deep cleansing and hydration to skin brightening, anti-aging, pigmentation correction, and rejuvenation therapies — we've got everything your skin craves.</p>
-                  <p className="p-4 mt-6 text-lg font-medium text-center rounded bg-salon-purple/10 text-salon-purple">
-                    ✨ Book your appointment today and take the first step toward healthy, radiant skin!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 bg-almond/10">
-            <div className="container max-w-4xl px-4 mx-auto">
-              <div className="p-8 rounded-lg bg-white/90">
-                <h2 className="mb-6 text-3xl font-bold text-center font-lora text-salon-purple">MASSAGE THERAPIES</h2>
-                <div className="space-y-4 text-jet/90">
-                  <p>Step into a space of pure relaxation with our carefully curated massage therapies. Performed by skilled, trusted professionals, each treatment is designed to melt away stress, soothe your senses, and leave you feeling completely renewed.</p>
-                </div>
-                
-                <h3 className="mt-8 mb-4 text-2xl font-semibold text-center font-lora text-salon-purple">Let go, unwind, and immerse yourself in pure indulgence</h3>
-                <div className="space-y-4 text-jet/90">
-                  <p>At Tryst, our expert massage therapies are thoughtfully crafted to melt away tension, restore balance, and leave you feeling renewed from head to toe. Each session is a personalized escape into deep relaxation and total rejuvenation.</p>
-                  <p className="p-4 mt-6 text-lg font-medium text-center rounded bg-salon-purple/10 text-salon-purple">
-                    ✨ Step into serenity — your moment of bliss awaits. Book today.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
         </>
       }
     />

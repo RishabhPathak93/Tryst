@@ -73,12 +73,12 @@ const MainLayout = () => {
         { name: 'Hair', path: '/services/hair' },
         { name: 'Nail', path: '/services/nail' },
         { name: 'Skin', path: '/services/skin' },
-        { name: 'Spa', path: '/services/spa' },
+        { name: 'Texture', path: '/services/Texture' },
         { name: 'Grooming', path: '/services/grooming' },
         { name: 'SPMU', path: '/services/spmu' }
       ]
     },
-    {name:'MAKEUP',path:'/services/makeup'},
+    {name:'MAKEUP',path:'/services/makup'},
     { name: 'BLOG', path: '/blog' },
     {
       name: 'BOOK APPOINTMENT',
@@ -104,7 +104,7 @@ const MainLayout = () => {
         { name: 'Hair Services', path: '/services/hair' },
         { name: 'Nail Services', path: '/services/nail' },
         { name: 'Skin Care', path: '/services/skin' },
-        { name: 'Spa Treatments', path: '/services/spa' }
+        { name: 'Hair Texture', path: '/services/Texture' }
       ]
     }
   ]

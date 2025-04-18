@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection'
 import SectionTitle from '../components/SectionTitle'
 import { Link } from 'react-router-dom'
 import heroImage from '../assets/images/hero.jpeg'
-import salon1Image from '../assets/images/11.jpg'
+import salon1Image from '../assets/images/1.jpg'
 import heroVideo from '../assets/TrystBackground.mp4'
 
 const About = () => {
@@ -29,27 +29,22 @@ const About = () => {
             >
               <SectionTitle
                 title='Our Story'
-                subtitle='Founded just two years ago, our salon was born from a desire to elevate self-care into a personalized, ethical, and uplifting experience.'
               />
               <div className='mt-3 space-y-4 text-[#917565] text-justify'>
-                <p>
-                  Welcome to Tryst — a retreat where timeless elegance meets
+              <p>At Tryst, we bring together inspiration, artistry, creativity and sustainability in a space that truly reflects our values. This vision is the heartbeat of everything we do — and that’s what makes each of your visits truly unique.</p>
+
+                <p>At our salon, we blend timeless elegance with heartfelt care. Founded in 2023, our goal has always been to create a space where you can unwind, feel empowered, rejuvenated and leave looking your best!
+
+We’re all about crafting confidence — through personalized care, thoughtful service, and a genuine commitment to clean beauty. By using all-natural, eco-friendly products, we ensure every treatment is a mindful blend of what’s best for you and for the planet.
+
+Step into a beautifully designed space, created to offer a warm, inviting atmosphere that makes you feel completely comfortable and at ease. Here, you are valued, rejuvenated, and treated with the utmost care – because your radiance is our purpose.
+</p>
+                  <p>Welcome to Tryst — a retreat where timeless elegance meets
                   heartfelt care. From day one, our mission has been simple: to
                   help you look and feel your best through services crafted with
                   love, intention, and integrity.
                 </p>
-                <p>
-                  We thoughtfully select only clean, all-natural, and
-                  eco-conscious products that are as nurturing to you as they
-                  are kind to the planet. Here, sustainability is more than a
-                  buzzword — it’s a promise.
-                </p>
-                <p>
-                  Our salon is more than a place for beauty — it's a sanctuary
-                  where you're seen, heard, and celebrated. Surrounded by warm
-                  tones and cozy interiors, each visit is designed to make you
-                  feel empowered, rejuvenated, and right at home.
-                </p>
+                
               </div>
             </motion.div>
 
@@ -95,7 +90,7 @@ const About = () => {
               },
               {
                 title: 'Personalization',
-                description: `We are deeply inspired by creativity, guided by sustainability, and fueled by passion. This philosophy shapes our culture and lies at the very heart of the salon experience we offer.`,
+                description: `Luxury lies in the details—and we pay attention to every one of them. No two clients are the same—and neither are our services. From the moment you walk in, everything we do is tailored to your unique style, needs, and vibe. Whether it's a complete makeover or a subtle refresh, our expert stylists create looks that are as individual as you are. Because you deserve nothing less than made-for-you beauty.`,
                 icon: (
                   <path
                     strokeLinecap='round'
@@ -107,7 +102,7 @@ const About = () => {
               },
               {
                 title: 'Comfort',
-                description: `Step into a beautifully designed space, created to offer a warm, inviting atmosphere that makes you feel completely comfortable and at ease. Here, you are valued, rejuvenated, and treated with the utmost care – because your radiance is our purpose.`,
+                description: `Welcome to our salon – a retreat where elegance, confidence, and care come together. Founded just two years ago, we are dedicated to helping you look and feel your best. Our approach goes beyond enhancing your appearance. Step into a beautifully designed space, created to offer a warm, inviting atmosphere that makes you feel completely comfortable and at ease. Here, you are valued, rejuvenated, and treated with the utmost care – because your radiance is our purpose.`,
                 icon: (
                   <path
                     strokeLinecap='round'

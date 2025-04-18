@@ -12,32 +12,28 @@ const Offers = () => {
       price: '999',
       description: 'Full arms + Full legs + Underarms',
       features: ['Professional waxing', 'Soothing aftercare', 'Hygienic process'],
-      category: 'Body Care'
     },
     {
       id: 2,
       title: 'Old School Luxe',
-      price: '2399',
+      price: '2499',
       description: 'Manicure + Pedicure',
       features: ['Premium products', 'Relaxing massage', 'Nail care', 'Cuticle treatment'],
-      category: 'Nail Care',
       popular: true
     },
     {
       id: 3,
       title: 'Haircut & Olaplex',
-      price: 'Custom',
+      price: '2499*',
       description: 'Haircut & Olaplex combo',
       features: ['Professional haircut', 'Olaplex treatment', 'Hair consultation'],
-      category: 'Hair Care'
     },
     {
       id: 4,
       title: 'Express Mani-Pedi',
       price: '1999',
       description: 'Manicure + Pedicure + Gel polish (for hands)',
-      features: ['Quick service', 'Gel polish', 'Basic nail care'],
-      category: 'Nail Care'
+      features: ['Quick service', 'Gel polish', 'Express nail care'],
     },
     {
       id: 5,
@@ -45,7 +41,6 @@ const Offers = () => {
       price: '2799',
       description: 'Manicure + Pedicure + Jeannot ceuticals clean up',
       features: ['Premium products', 'Deep cleaning', 'Luxury experience'],
-      category: 'Nail Care'
     },
     {
       id: 6,
@@ -53,7 +48,6 @@ const Offers = () => {
       price: '2999',
       description: 'Haircut + Beard trim + Scalp Detox + Jeannot Ceuticals Clean up',
       features: ['Complete grooming', 'Scalp treatment', 'Premium products'],
-      category: "Men's Grooming",
       popular: true
     },
     {
@@ -62,7 +56,6 @@ const Offers = () => {
       price: '1699',
       description: 'Haircut + Beard trim + Old School Detan',
       features: ['Basic grooming', 'Detan treatment', 'Professional service'],
-      category: "Men's Grooming"
     },
     {
       id: 8,
@@ -70,7 +63,6 @@ const Offers = () => {
       price: '3999',
       description: 'Luxe Facial treatment by THALGO',
       features: ['Premium products', 'Deep cleansing', 'Relaxing massage', 'Skin consultation'],
-      category: 'Skin Care',
       popular: true
     }
   ];
