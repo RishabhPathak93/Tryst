@@ -95,7 +95,8 @@ const MainLayout = () => {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Services', path: '/services' },
-        { name: 'Blog', path: '/blog' }
+        { name: 'Blog', path: '/blog' },
+        { name: 'Instagram', path:'https://www.instagram.com/tryst.salon/'}
       ]
     },
     {
@@ -335,7 +336,7 @@ const MainLayout = () => {
       {/* Footer */}
       <footer className='py-6 text-light-gray bg-[#2b3f2a]'>
         <div className='container px-4 mx-auto'>
-          <div className='grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+          <div className='grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
             {footerSections.map((section, index) => (
               <div key={index} className='space-y-2'>
                 <h3 className='text-sm font-semibold text-white'>
@@ -384,35 +385,6 @@ const MainLayout = () => {
                     Admin
                   </Link>
                 </div>
-              </div>
-              <div className='flex space-x-3'>
-                <a
-                  href='https://facebook.com'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='p-2 transition rounded-full hover:bg-dark-green/80'
-                  aria-label='Facebook'
-                >
-                  <FaFacebookF className='w-4 h-4' />
-                </a>
-                <a
-                  href='https://www.instagram.com/tryst.salon/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='p-2 transition rounded-full hover:bg-dark-green/80'
-                  aria-label='Instagram'
-                >
-                  <FaInstagram className='w-4 h-4' />
-                </a>
-                <a
-                  href='https://wa.me/1234567890'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='p-2 transition rounded-full hover:bg-dark-green/80'
-                  aria-label='WhatsApp'
-                >
-                  <FaWhatsapp className='w-4 h-4' />
-                </a>
               </div>
             </div>
           </div>

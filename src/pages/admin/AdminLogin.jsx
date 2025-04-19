@@ -1,3 +1,4 @@
+//src/admin/AdminLogin.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,16 +10,16 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-  
+
     try {
       const res = await fetch('http://localhost:5000/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: 'admin', password: passkey }),
       });
-  
+
       const data = await res.json();
-  
+
       if (res.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('isAdminAuthenticated', 'true');
@@ -31,7 +32,6 @@ const AdminLogin = () => {
       setError('Server error. Please try again.');
     }
   };
-  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -43,11 +43,9 @@ const AdminLogin = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-          <label htmlFor="passkey" className="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-
-
+            <label htmlFor="passkey" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
             <input
               type="password"
               id="passkey"
@@ -58,9 +56,7 @@ const AdminLogin = () => {
             />
           </div>
 
-          {error && (
-            <p className="text-sm text-red-600">{error}</p>
-          )}
+          {error && <p className="text-sm text-red-600">{error}</p>}
 
           <button
             type="submit"

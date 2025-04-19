@@ -1,6 +1,6 @@
-//src/admin/AdminBlogCreate.jsx
-import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+//src/admin/AdminBlogEdit.jsx
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const CATEGORIES = [
   'Hair Care',
@@ -13,7 +13,8 @@ const CATEGORIES = [
   'Product Reviews',
 ];
 
-const AdminBlogCreate = () => {
+const AdminBlogEdit = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [formData, setFormData] = useState({
@@ -24,6 +25,41 @@ const AdminBlogCreate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('Not authenticated!');
+        return;
+      }
+
+      try {
+        const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          setFormData({
+            title: data.title,
+            content: data.content,
+            category: data.category,
+          });
+          setImagePreview(data.image || '');
+        } else {
+          alert('Failed to fetch blog: ' + data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching blog:', error);
+        alert('Server error while fetching blog.');
+      }
+    };
+
+    fetchBlog();
+  }, [id]);
 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
@@ -61,7 +97,7 @@ const AdminBlogCreate = () => {
         });
       }
 
-      const newPost = {
+      const updatedPost = {
         title: formData.title,
         content: formData.content,
         excerpt: formData.content.slice(0, 150) + '...',
@@ -70,25 +106,25 @@ const AdminBlogCreate = () => {
         image: imageUrl,
       };
 
-      const res = await fetch('http://localhost:5000/api/blogs', {
-        method: 'POST',
+      const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(newPost),
+        body: JSON.stringify(updatedPost),
       });
 
       if (res.ok) {
-        alert('Blog created successfully!');
+        alert('Blog updated successfully!');
         navigate('/admin/blog');
       } else {
         const err = await res.json();
         alert('Error: ' + err.message);
       }
     } catch (error) {
-      console.error('Error creating post:', error);
-      alert('Error creating post. Please try again.');
+      console.error('Error updating post:', error);
+      alert('Error updating post. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -103,7 +139,7 @@ const AdminBlogCreate = () => {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">Create New Blog Post</h1>
+      <h1 className="mb-6 text-2xl font-bold text-gray-900">Edit Blog Post</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -203,7 +239,7 @@ const AdminBlogCreate = () => {
             disabled={loading}
             className="px-4 py-2 text-sm font-medium text-white rounded-md bg-salon-purple hover:bg-dark-green disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Saving...' : 'Create Post'}
+            {loading ? 'Saving...' : 'Update Post'}
           </button>
         </div>
       </form>
@@ -211,4 +247,4 @@ const AdminBlogCreate = () => {
   );
 };
 
-export default AdminBlogCreate;
+export default AdminBlogEdit;

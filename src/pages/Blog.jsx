@@ -3,21 +3,29 @@ import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import BlogPost from '../components/BlogPost';
-import { Link } from 'react-router-dom';
-import backgroundImage from '../assets/images/hero-bg.jpg';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // In a real application, this would be an API call
-    // For now, we'll use local storage
-    const savedPosts = localStorage.getItem('blog_posts');
-    if (savedPosts) {
-      setPosts(JSON.parse(savedPosts));
-    }
-    setLoading(false);
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/blogs');
+        if (!response.ok) {
+          throw new Error('Failed to fetch blog posts');
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   return (
@@ -25,7 +33,9 @@ const Blog = () => {
       <HeroSection
         title="Our Blog"
         subtitle="Discover beauty insights, trends, and stories from the Tryst family"
-        backgroundImage={backgroundImage}
+        youtubeVideoId="YF_eMPKJqG0"
+        backgroundImage={undefined}
+        backgroundVideo={undefined}
         buttonText={undefined}
         buttonLink={undefined}
       />
@@ -42,6 +52,10 @@ const Blog = () => {
             <div className="flex items-center justify-center h-64">
               <div className="w-16 h-16 border-4 rounded-full border-salon-purple border-t-transparent animate-spin"></div>
             </div>
+          ) : error ? (
+            <div className="mt-12 text-center">
+              <p className="text-lg text-red-600">{error}</p>
+            </div>
           ) : posts.length > 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +65,7 @@ const Blog = () => {
               className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3"
             >
               {posts.map((post) => (
-                <BlogPost key={post.id} post={post} />
+                <BlogPost key={post._id} post={post} />
               ))}
             </motion.div>
           ) : (

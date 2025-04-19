@@ -8,6 +8,7 @@ const HeroSection = ({
   subtitle,
   backgroundImage,
   backgroundVideo,
+  youtubeVideoId, // New prop for YouTube video ID
   buttonLink = "",
   buttonText = "",
 }) => {
@@ -15,7 +16,7 @@ const HeroSection = ({
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(error => {
+      videoRef.current.play().catch((error) => {
         console.warn("Video autoplay was prevented:", error);
       });
     }
@@ -23,8 +24,25 @@ const HeroSection = ({
 
   return (
     <div className="relative min-h-[80vh] flex items-center overflow-hidden">
-      {/* Video Background */}
-      {backgroundVideo && (
+      {/* YouTube Video Background */}
+      {youtubeVideoId && (
+        <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&controls=0&playlist=${youtubeVideoId}&rel=0`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Background Video"
+            className="absolute top-0 left-0 object-cover w-full h-full"
+            style={{
+              filter: "brightness(0.5)", // Match the video brightness
+            }}
+          ></iframe>
+        </div>
+      )}
+
+      {/* Local Video Background */}
+      {backgroundVideo && !youtubeVideoId && (
         <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
           <video
             ref={videoRef}
@@ -47,7 +65,7 @@ const HeroSection = ({
       )}
 
       {/* Fallback Background Image */}
-      {!backgroundVideo && backgroundImage && (
+      {!backgroundVideo && !youtubeVideoId && backgroundImage && (
         <div
           className="absolute inset-0 z-0 bg-center bg-cover"
           style={{
@@ -103,8 +121,9 @@ const HeroSection = ({
 HeroSection.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  backgroundImage: PropTypes.string.isRequired,
+  backgroundImage: PropTypes.string,
   backgroundVideo: PropTypes.string,
+  youtubeVideoId: PropTypes.string, // Add prop type for YouTube ID
   buttonLink: PropTypes.string,
   buttonText: PropTypes.string,
 };

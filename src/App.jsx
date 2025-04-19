@@ -16,7 +16,6 @@ import SkinPage from './pages/services/Skin';
 import Haircolor from './pages/services/Haircolor';
 import Texture from './pages/services/Texture';
 // import GroomingPage from './pages/services/Grooming';
-import SPMUPage from './pages/services/SPMU';
 import Makeup from './pages/services/Makeup';
 import Menshair from './pages/services/Menshair';
 import Makup from './pages/services/make';
@@ -40,7 +39,6 @@ function App() {
         <Route path="services/Haircolor" element={<Haircolor />} />
         <Route path="services/Texture" element={<Texture />} />
         {/* <Route path="services/grooming" element={<GroomingPage />} /> */}
-        <Route path="services/spmu" element={<SPMUPage />} />
         <Route path="services/makeup" element={<Makeup />} />
         <Route path="services/makup" element={<Makup />} />
         <Route path="services/edit" element={<Bedit />} />

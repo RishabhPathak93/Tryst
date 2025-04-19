@@ -1,3 +1,4 @@
+//src/admin/AdminBlogList.jsx
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +14,7 @@ const AdminBlogList = () => {
       }
 
       try {
-        const res = await fetch('http://localhost:5000/admin/blogs', {
+        const res = await fetch('http://localhost:5000/api/blogs', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -41,7 +42,7 @@ const AdminBlogList = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch(`http://localhost:5000/admin/blogs/${id}`, {
+      const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -49,7 +50,7 @@ const AdminBlogList = () => {
       });
 
       if (res.ok) {
-        setPosts((prev) => prev.filter((post) => post.id !== id));
+        setPosts((prev) => prev.filter((post) => post._id !== id));
       } else {
         const err = await res.json();
         alert('Failed to delete post: ' + err.message);
@@ -95,7 +96,7 @@ const AdminBlogList = () => {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {posts.map((post) => (
-              <tr key={post.id}>
+              <tr key={post._id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm font-medium text-gray-900">{post.title}</div>
                 </td>
@@ -114,13 +115,13 @@ const AdminBlogList = () => {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                   <Link
-                    to={`/admin/blog/edit/${post.id}`}
+                    to={`/admin/blog/edit/${post._id}`}
                     className="text-indigo-600 hover:text-indigo-900"
                   >
                     Edit
                   </Link>
                   <button
-                    onClick={() => handleDelete(post.id)}
+                    onClick={() => handleDelete(post._id)}
                     className="ml-4 text-red-600 hover:text-red-900"
                   >
                     Delete

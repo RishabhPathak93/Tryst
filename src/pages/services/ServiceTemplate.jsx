@@ -47,7 +47,9 @@ const ServiceTemplate = ({
                   <h3 className='mb-3 text-xl font-bold font-lora text-salon-purple '>
                     {service.name}
                   </h3>
-                  <p className='mb-4 text-jet/80 text-justify'>{service.description}</p>
+                  <p className='mb-4 text-jet/80 text-justify'>
+                    {service.description}
+                  </p>
 
                   {service.price && (
                     <p className='mb-4 text-lg font-semibold text-salon-purple'>
@@ -55,7 +57,7 @@ const ServiceTemplate = ({
                     </p>
                   )}
 
-                  <div className='flex justify-center gap-4 mb-4 text-sm text-jet/60'>
+                  <div className='flex flex-col justify-center gap-4 mb-4 text-sm text-jet/60'>
                     {service.duration && (
                       <span className='flex items-center gap-1'>
                         <FiClock size={14} /> {service.duration}
@@ -88,7 +90,12 @@ const ServiceTemplate = ({
                 </div>
 
                 <div className='px-6 py-3 text-center border-t bg-almond/10 border-almond/20'>
-                  <button className='w-full max-w-xs py-2 text-sm font-medium tracking-wide text-white uppercase transition-all duration-300 rounded bg-salon-purple hover:bg-black'>
+                  <button
+                    className='w-full max-w-xs py-2 text-sm font-medium tracking-wide text-white uppercase transition-all duration-300 rounded bg-salon-purple hover:bg-black'
+                    onClick={() => {
+                      window.location.href = 'https://wa.me/1234567890'
+                    }}
+                  >
                     Book This Service
                   </button>
                 </div>

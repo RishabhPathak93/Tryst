@@ -8,21 +8,38 @@ const BlogPostView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [relatedPosts, setRelatedPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const savedPosts = JSON.parse(localStorage.getItem('blog_posts') || '[]');
-    const foundPost = savedPosts.find(p => p.id === id);
-    
-    if (foundPost) {
-      setPost(foundPost);
-      const related = savedPosts
-        .filter(p => p.id !== id && p.category === foundPost.category)
-        .slice(0, 3);
-      setRelatedPosts(related);
-    }
-    setLoading(false);
+    const fetchPost = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/blogs/${id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch blog post');
+        }
+        const data = await response.json();
+        setPost(data);
+
+        // Fetch related posts
+        const relatedResponse = await fetch('http://localhost:5000/api/blogs');
+        if (!relatedResponse.ok) {
+          throw new Error('Failed to fetch related posts');
+        }
+        const allPosts = await relatedResponse.json();
+        const related = allPosts
+          .filter((p) => p._id !== id && p.category === data.category)
+          .slice(0, 3);
+        setRelatedPosts(related);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
   }, [id]);
 
   if (loading) {
@@ -33,7 +50,7 @@ const BlogPostView = () => {
     );
   }
 
-  if (!post) {
+  if (error || !post) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen py-16">
         <motion.div
@@ -43,16 +60,18 @@ const BlogPostView = () => {
           className="text-center"
         >
           <h1 className="mb-6 text-3xl font-lora text-salon-purple">Post Not Found</h1>
-          <p className="mb-8 text-lg text-jet/70">The blog post you're looking for doesn't exist or has been removed.</p>
+          <p className="mb-8 text-lg text-jet/70">
+            {error || "The blog post you're looking for doesn't exist or has been removed."}
+          </p>
           <button
             onClick={() => navigate('/blog')}
             className="inline-flex items-center px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all duration-300 bg-salon-purple hover:bg-black group"
           >
             Back to Blog
-            <svg 
-              className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -76,10 +95,10 @@ const BlogPostView = () => {
             onClick={() => navigate('/blog')}
             className="inline-flex items-center mb-8 text-sm font-medium tracking-wide uppercase transition-all duration-300 text-salon-purple hover:text-black group"
           >
-            <svg 
-              className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -90,11 +109,7 @@ const BlogPostView = () => {
           <article className="mb-16">
             {post.image && (
               <div className="relative mb-8 overflow-hidden rounded-lg aspect-video">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="object-cover w-full h-full"
-                />
+                <img src={post.image} alt={post.title} className="object-cover w-full h-full" />
                 {post.category && (
                   <span className="absolute px-4 py-2 text-sm font-medium tracking-wider text-white uppercase rounded-full top-4 left-4 bg-salon-purple/90">
                     {post.category}
@@ -105,26 +120,46 @@ const BlogPostView = () => {
 
             <div className="flex items-center mb-6 text-sm text-jet/60">
               <span className="flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
                 </svg>
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
-                  day: 'numeric'
+                  day: 'numeric',
                 })}
               </span>
               <span className="mx-2">•</span>
               <span className="flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
                 </svg>
                 By {post.author}
               </span>
             </div>
 
             <h1 className="mb-6 text-4xl font-lora text-salon-purple">{post.title}</h1>
-            
+
             <div className="prose prose-lg max-w-none">
               {post.content.split('\n').map((paragraph, index) => (
                 <p key={index} className="mb-6 leading-relaxed text-jet/80">
@@ -143,7 +178,7 @@ const BlogPostView = () => {
               />
               <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3">
                 {relatedPosts.map((relatedPost) => (
-                  <BlogPost key={relatedPost.id} post={relatedPost} />
+                  <BlogPost key={relatedPost._id} post={relatedPost} />
                 ))}
               </div>
             </div>

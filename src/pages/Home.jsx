@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
+import { FaMapMarkerAlt } from "react-icons/fa";
 import ServiceCard from '../components/ServiceCard';
 import TestimonialSection from '../components/TestimonialSection';
 import { Link } from 'react-router-dom';
@@ -65,12 +66,15 @@ const Home = () => {
 
   return (
     <div className="bg-white">
-      <HeroSection
-        // title="Own your day with confidence — and hair that’s ready to steal the spotlight! "
-        // subtitle="We specialize in precision cuts and expert styling, offering personalized services that match your mood, your vibe, and every occasion!"
-        backgroundImage={heroImage}
-        backgroundVideo={heroVideo}
-      />
+     <HeroSection
+             title="Our Blog"
+             subtitle="Discover beauty insights, trends, and stories from the Tryst family"
+             youtubeVideoId="YF_eMPKJqG0" // YouTube video ID
+             backgroundImage={undefined} // Explicitly disable to avoid conflict
+             backgroundVideo={undefined} // Explicitly disable to avoid conflict
+             buttonText={undefined}
+             buttonLink={undefined}
+           />
 
       <section className="py-16 bg-champagne-pink/10">
         <div className="container px-4 mx-auto">
@@ -225,7 +229,10 @@ const Home = () => {
                 title="Here to help"
                 subtitle="Got questions or ready to book your glow-up? Let’s get you connected."
               />
-
+              <div className='my-2'>
+              <span><FaMapMarkerAlt />Location: </span>
+                <span className=' font-medium'>Tryst Salon, 1st Floor, 2nd Cross Rd, 2nd Block, Koramangala, Bengaluru, Karnataka 560034</span>
+              </div>
               <div className="mb-8 space-y-4">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -256,12 +263,12 @@ const Home = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, margin: '-100px' }}
               >
-                <Link
-                  to="https://wa.me/1234567890"
-                  className="inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-brown border-dark-green hover:bg-dark-green hover:text-white"
-                >
-                  Send us an email
-                </Link>
+              <a
+              href="mailto:example@email.com?subject=Inquiry%20from%20Tryst%20Salon&body=Hello,%20I%20have%20a%20question..."
+              className="inline-block px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-300 border text-brown border-dark-green hover:bg-dark-green hover:text-white"
+            >
+              Send us an email
+            </a>
               </motion.div>
             </div>
           </div>
